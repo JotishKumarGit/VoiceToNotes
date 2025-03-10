@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import arrow1 from '/public/arrow1.png';
 import './Home.css';
 import { Link } from 'react-router-dom';
@@ -24,9 +24,23 @@ import "swiper/css/pagination";
 import { Autoplay, FreeMode } from "swiper/modules";
 import blog1 from '/public/blog1.avif';
 import video from '/public/video.mp4';
+import About from '../pages/About';
+import Typewriter from '../components/Animations/Typewriter';
+import Services from './Services/Services';
+import PrivacyPolicy from './Privacy/PrivacyPolicy';
 
 
 function Home() {
+
+
+  // For dynamic content 
+  const dynamicText = "Never Take Notes Again,";
+  const aboutText = "This is about";
+  const demo = "Interactive demo";
+  const aboutUs = "About Us";
+  const naverTakeNote = "Naver take not manually";
+  const plan = "Chose Your Plan";
+
 
   // This is for image slider
   const images = [medium, ih, foundr, scoopit, medium, ih, foundr, scoopit];
@@ -148,7 +162,8 @@ function Home() {
                 <div className="row parent py-5 justify-content-center align-items-center">
                   <div className="col-12 col-md-12 col-lg-6 col-sm-12 ">
                     <div className='left-section'>
-                      <h2>Never Take Notes Again, </h2>
+                      {/* <h2>Never Take Notes Again, </h2> */}
+                      <Typewriter text={dynamicText} />
                       <h2><span>There's an AI for that.</span></h2>
                       <h3>Try TalkNotes free for 7 days</h3>
                       <p>Join thousands of professionals who use AI voice transcription and note-taking to save time, impress colleagues and clients with organized notes while working smarter, not harder.</p>
@@ -174,7 +189,8 @@ function Home() {
                   </div>
                   <div className="col-12 col-md-12 col-lg-6 col-sm-12">
                     <div className="right-section shadow-lg d-flex flex-column align-items-center text-center p-4">
-                      <h3>Interactive demo</h3>
+                      {/* <h3>Interactive demo</h3> */}
+                      <h3 style={{ color: "blue" }} ><Typewriter text={demo} /></h3>
                       <div className='line-s'>
                         <h1></h1>
                       </div>
@@ -206,25 +222,48 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* This is for about sections */}
+      <About />
       {/* image slider */}
-      <div className="slider-container overflow-hidden bg-gray-100 py-5 image-wrapper">
-        <div className="image-slider flex">
+      <div className=" container-fluid slider-container overflow-hidden bg-gray-100 py-5 image-wrapper">
+        <div className="image-slider">
           {images.map((img, index) => (
             <img key={index} src={img} alt="" className="h-16 mx-5" />
           ))}
         </div>
       </div>
       {/* This is for video */}
-      <div className="container-fluid">
+      <div className="container-fluid video">
         <div className="container">
-          <div className="row py-5">
-            <div className="col-12">
-              <h2>Video</h2>
-              <div className="" >
-                <video width="600" controls>
-                  <source src={video} type="video/mp4"  />
-                  Your browser does not support the video tag.
-                </video>
+          <div className="row py-5 ">
+            <div className="video-work-content text-center">
+              <h2 className=''>How To Use This</h2>
+              <p className=''>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, ab dolore natus consectetur doloribus blanditiis quis corrupti veniam optio alias sed repellat cumque maxime quae. Illo officia iste ad iure!</p>
+            </div>
+            <div className="col-12 text-center">
+              <div className="row ">
+                <div className="col-12 col-md-6 col-lg-12 col-sm-12 text-center">
+                  <div className="left-video">
+                    <div className="" >
+                      <video controls autoplay muted loop>
+                        <source src={video} type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                {/* <div className="col-12 col-md-12 col-lg-4 col-sm-12">
+                  <div className="right-video">
+                    <h2>How to work VoiceToNotes </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem blanditiis quasi quam sapiente, beatae, reiciendis sed cupiditate rem minima velit aliquid ex soluta exercitationem. Minima a blanditiis vel autem.</p>
+                    <ul>
+                      <li>Key point 1</li>
+                      <li>Key point 1</li>
+                      <li>Key point 1</li>
+                      <li>Key point 1</li>
+                      <li>Key point 1</li>
+                    </ul>
+                  </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -236,7 +275,7 @@ function Home() {
           <div className="container">
             <div className="row section-wrapper-parent">
               <div className="text-center py-4">
-                <h2>Naver take not <span style={{ color: "red" }}>manually</span></h2>
+                <h2><Typewriter text={naverTakeNote} /> <span style={{ color: "red" }}>manually</span></h2>
                 <p style={{ color: "light" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos fugit quod suscipit odio libero dicta eos! Non, quasi. Eos, minus culpa voluptates delectus praesentium laudantium eaque? Provident qui nostrum modi.</p>
               </div>
               <div className="col-12">
@@ -414,7 +453,7 @@ function Home() {
           <div className="container">
             <div className="row text-center py-4 parent">
               <div className="third-section-content-wrapper">
-                <h2>Chose Your Plan</h2>
+                <h2><Typewriter text={plan} /></h2>
                 <p>Start with our free plan unlock facebook at pro</p>
                 <div className='price-btn py-4'>
                   <button className='btn-price'>Working</button>
@@ -519,6 +558,10 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* This is services sections  */}
+      <Services />
+      {/* End services sections  */}
+
       {/* testimonials */}
       <div className="container-fluid py-5 testimonials">
         <div className="row">
@@ -667,6 +710,8 @@ function Home() {
           </div>
         </div>
       </div >
+      {/* This is for privacy policy  */}
+      <PrivacyPolicy  />
     </>
   )
 }

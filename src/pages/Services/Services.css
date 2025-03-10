@@ -1,0 +1,27 @@
+.services {}
+
+.service-p {
+    padding: 10px 160px;
+    line-height: 30px;
+    color: rgb(53, 81, 105);
+}
+
+.services .card-body p {
+    line-height: 35px;
+}
+
+.service-btn {
+    padding: 7px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+.service-btn:hover {
+    padding: 7px 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid #eee;
+    border-radius: 20px;
+}
