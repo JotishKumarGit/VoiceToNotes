@@ -3,6 +3,7 @@ import './About.css';
 import blog1 from '/public/blog1.avif';
 import { motion } from "framer-motion";
 import Typewriter from '../components/Animations/Typewriter';
+import './About.css';
 
 function Section() {
 
@@ -10,7 +11,7 @@ function Section() {
 
     return (
         <>
-            <section className="container-fluid py-5 bg-light">
+            <section className="container-fluid py-5 about">
                 <div className="container">
                     <div className="row py-4 parent">
                         <h2 className="display-5 text-center fw-bold"><Typewriter text={aboutUs} /></h2>
@@ -20,7 +21,7 @@ function Section() {
                         </p>
                         <div className="row align-items-center">
                             {/* Image Section */}
-                            <div className="col-md-6">
+                            <div className="col-md-5 ">
                                 <motion.img
                                     src={blog1}
                                     alt="About Us"
@@ -30,9 +31,8 @@ function Section() {
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                 />
                             </div>
-
                             {/* Content Section */}
-                            <div className="col-md-6">
+                            <div className="col-md-7">
                                 <motion.div
                                     initial={{ x: 100, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}

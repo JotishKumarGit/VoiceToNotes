@@ -11,7 +11,7 @@ function Footer() {
                         <div className="row py-5">
                             <div className="col-12">
                                 <div className="row">
-                                    <div className="col-12 col-md-3 col-lg-3 col-sm-12 pb-3">
+                                    <div className="col-12 col-md-6 col-lg-5 col-sm-12 pb-3">
                                         <div className='d-flex footer-logo'>
                                             <div>
                                                 <h5>Web3Task</h5>
@@ -22,21 +22,21 @@ function Footer() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-12 col-md-3 col-lg-3 col-sm-12 pb-3">
+                                    <div className="col-12 col-md-3 col-lg-2 col-sm-12 pb-3">
                                         <h5>Web3Task</h5>
                                         <p>abc@gmail.com</p>
                                         <p>123445678</p>
                                         <p>abc@gmail.com</p>
                                         <p>123445678</p>
                                     </div>
-                                    <div className="col-12 col-md-3 col-lg-3 col-sm-12 pb-3">
+                                    <div className="col-12 col-md-3 col-lg-2 col-sm-12 pb-3">
                                         <h5>Web3Task</h5>
                                         <p>abc@gmail.com</p>
                                         <p>123445678</p>
                                         <p>abc@gmail.com</p>
                                         <p>123445678</p>
                                     </div>
-                                    <div className="col-12 col-md-3 col-lg-3 col-sm-12 pb-3">
+                                    <div className="col-12 col-md-3 col-lg-2 col-sm-12 pb-3">
                                         <h5>Web3Task</h5>
                                         <p>abc@gmail.com</p>
                                         <p>123445678</p>

@@ -6,8 +6,10 @@ import star from '/public/star.jpg';
 import playStore from '/public/playstore-badge.png'
 import play from '/public/play.png';
 import voice from '/public/voice.png';
+import mac from '/public/mac-2.gif';
+// import voice from '/public/voice.png';
 import delImg from '/public/delImg.png';
-import medium from '/public/medium.svg';
+import medium from '/public/medium.png';
 import ih from '/public/ih.svg';
 import foundr from '/public/foundr.svg';
 import scoopit from '/public/scoopit.svg';
@@ -21,19 +23,43 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay, FreeMode, Zoom } from "swiper/modules";
 import blog1 from '/public/blog1.avif';
 import video from '/public/video.mp4';
 import About from '../pages/About';
 import Typewriter from '../components/Animations/Typewriter';
 import Services from './Services/Services';
 import PrivacyPolicy from './Privacy/PrivacyPolicy';
+import Video from './Video/Video';
+import AnimatedText from '../components/Animations/AnimatedText';
+import ZoomEffect from '../components/Animations/ZoomEffect';
+import SocialMedia from './social/SocialMedia';
+import Animated_gift from '/public/anima-gift.gif';
+import top_mac from '/public/top-mac.gif';
+import anima_3 from '/public/anama-3.gif';
+import ScrollModal from '../components/modal/ScrollModal';
+
 
 
 function Home() {
 
+  // This is for background-color change 
+  const [bgColor, setBgColor] = useState("#33ff57");
 
-  // For dynamic content 
+  useEffect(() => {
+    const colors = ["#fff"];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % colors.length;
+      setBgColor(colors[index]);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+  // For dynamic content from typewriter
   const dynamicText = "Never Take Notes Again,";
   const aboutText = "This is about";
   const demo = "Interactive demo";
@@ -151,22 +177,31 @@ function Home() {
     },
   ];
 
-
   return (
     <>
       <div className='wrapper'>
-        <div className="container-fluid">
+        {/* <aside className="aside-section position-absolute top-25 end-0 m-3 p-2 ">
+          <div class="voice-assistant">
+            <div class="icon">🎙️</div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+          </div>
+        </aside> */}
+        <div className="container-fluid" >
           <div className="container">
             <div className="row ">
               <div className="col-12">
                 <div className="row parent py-5 justify-content-center align-items-center">
-                  <div className="col-12 col-md-12 col-lg-6 col-sm-12 ">
+                  <div className="col-12 col-md-12 col-lg-8 col-sm-12 ">
                     <div className='left-section'>
                       {/* <h2>Never Take Notes Again, </h2> */}
-                      <Typewriter text={dynamicText} />
-                      <h2><span>There's an AI for that.</span></h2>
+                      <div className="">
+                        <span><AnimatedText text="Take Notes Again, There's an AI for that." /></span>
+                        {/* <span><img style={{ height: '80px', width: '80px' }} src={anima_3} alt="" /></span> */}
+                      </div>
                       <h3>Try TalkNotes free for 7 days</h3>
-                      <p>Join thousands of professionals who use AI voice transcription and note-taking to save time, impress colleagues and clients with organized notes while working smarter, not harder.</p>
+                      <p className=''>Join thousands of professionals who use AI voice transcription and note-taking to save time, impress colleagues and clients with organized notes while working smarter, not harder.</p>
                       <h5>Available on Web, iOS and Android.</h5>
                       <div className='carousel'>
                         <h4>Works in:</h4>
@@ -187,12 +222,14 @@ function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-12 col-md-12 col-lg-6 col-sm-12">
+                  <div className="col-12 col-md-12 col-lg-4 col-sm-12">
                     <div className="right-section shadow-lg d-flex flex-column align-items-center text-center p-4">
                       {/* <h3>Interactive demo</h3> */}
-                      <h3 style={{ color: "blue" }} ><Typewriter text={demo} /></h3>
-                      <div className='line-s'>
-                        <h1></h1>
+                      <h3 style={{ color: "blue" }} className='text-demo' > <AnimatedText text="Interactive demo" /></h3>
+                      <div className='line-s' style={{
+                        backgroundColor: bgColor, transition: "background-color 0.5s ease"
+                      }}>
+                        <img style={{ height: "80px", width: "80px" }} src={top_mac} alt="" />
                       </div>
                       <div className='pt-4'>Limit:01:00</div>
                       <h2 className='py-2'>00:00</h2>
@@ -204,8 +241,14 @@ function Home() {
                           </div>
                         </div>
                         <div className="voice">
-                          <img src={voice} alt="Voice" />
+                          <img style={{ height: "110px", width: "110px" }} src={mac} alt="Voice" />
                         </div>
+                        {/* <div class="voice-assistant ">
+                          <div class="icon">🎙️</div>
+                          <div class="wave wave1"></div>
+                          <div class="wave wave2"></div>
+                          <div class="wave wave3"></div>
+                        </div> */}
                         <div className="play">
                           <img src={delImg} alt="Delete" />
                         </div>
@@ -221,55 +264,28 @@ function Home() {
             </div>
           </div>
         </div>
+        <div class="voice-assistant">
+          <div class="icon-1">🎙️</div>
+          <div class="voice-wave"></div>
+          <div class="voice-wave"></div>
+          <div class="voice-wave"></div>
+        </div>
+        {/* <div class="text-output"><AnimatedText text="How can i help you" /></div> */}
       </div>
       {/* This is for about sections */}
-      <About />
+      {/* <About /> */}
       {/* image slider */}
-      <div className=" container-fluid slider-container overflow-hidden bg-gray-100 py-5 image-wrapper">
+      <div className=" container-fluid slider-container overflow-hidden  py-5 image-wrapper" >
         <div className="image-slider">
           {images.map((img, index) => (
-            <img key={index} src={img} alt="" className="h-16 mx-5" />
+            <img key={index} src={img} alt="" style={{ backgroundColor: 'green' }} className=" h-16 mx-5 animated-image" />
           ))}
         </div>
       </div>
       {/* This is for video */}
-      <div className="container-fluid video">
-        <div className="container">
-          <div className="row py-5 ">
-            <div className="video-work-content text-center">
-              <h2 className=''>How To Use This</h2>
-              <p className=''>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, ab dolore natus consectetur doloribus blanditiis quis corrupti veniam optio alias sed repellat cumque maxime quae. Illo officia iste ad iure!</p>
-            </div>
-            <div className="col-12 text-center">
-              <div className="row ">
-                <div className="col-12 col-md-6 col-lg-12 col-sm-12 text-center">
-                  <div className="left-video">
-                    <div className="" >
-                      <video controls autoplay muted loop>
-                        <source src={video} type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-                </div>
-                {/* <div className="col-12 col-md-12 col-lg-4 col-sm-12">
-                  <div className="right-video">
-                    <h2>How to work VoiceToNotes </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem blanditiis quasi quam sapiente, beatae, reiciendis sed cupiditate rem minima velit aliquid ex soluta exercitationem. Minima a blanditiis vel autem.</p>
-                    <ul>
-                      <li>Key point 1</li>
-                      <li>Key point 1</li>
-                      <li>Key point 1</li>
-                      <li>Key point 1</li>
-                      <li>Key point 1</li>
-                    </ul>
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Video />
       {/* This is section */}
+      <ZoomEffect />
       <div className='section-wrapper'>
         <div className="container-fluid">
           <div className="container">
@@ -280,42 +296,42 @@ function Home() {
               </div>
               <div className="col-12">
                 <div className="row pb-5">
-                  <div className="col-12 col-md-6 col-lg-4 col-sm-12">
+                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
                       <h3>Meetings</h3>
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
                     </div>
                   </div>
-                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 ">
+                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
                       <h3>Meetings</h3>
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
                     </div>
                   </div>
-                  <div className="col-12 col-md-6 col-lg-4 col-sm-12">
+                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
                       <h3>Meetings</h3>
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
                     </div>
                   </div>
-                  <div className="col-12 col-md-6 col-lg-4 col-sm-12">
+                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
                       <h3>Meetings</h3>
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
                     </div>
                   </div>
-                  <div className="col-12 col-md-6 col-lg-4 col-sm-12">
+                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="not found" />
                       <h3>Meetings</h3>
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
                     </div>
                   </div>
-                  <div className="col-12 col-md-6 col-lg-4 col-sm-12">
+                  <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
                       <h3>Meetings</h3>
@@ -328,13 +344,18 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* This is social media sections */}
+      <SocialMedia />
+
+      {/* end social media sections */}
       {/* This is for second section */}
       <div className="second-wrapper justify-content-center align-items-center">
         <div className="container-fluid">
           <div className="container">
             <div className="row parent">
               <div className="second-content-wrapper text-center py-4">
-                <h3 className='py-4'>Take <span style={{ color: "red" }}>Perfects</span> Notes</h3>
+                {/* <h3 className='py-4'>Take <span style={{ color: "red" }}>Perfects</span> Notes</h3> */}
+                <h3 className='py-4'><AnimatedText text="Take Perfects Notes" /></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus unde eius itaque velit voluptatum alias blanditiis modi obcaecati labore, deleniti est.</p>
               </div>
               <div className="col-12">
@@ -446,7 +467,8 @@ function Home() {
           </div>
         </div>
       </div>
-
+      {/* modal */}
+      {/* <ScrollModal /> */}
       {/* third sections */}
       <div className="third-section-back">
         <div className="container-fluid">
@@ -567,7 +589,7 @@ function Home() {
         <div className="row">
           <div className="col-12">
             <div className="row py-5">
-              <div className="col-12 col-md-6 col-lg-12 col-sm-12">
+              <div className="col-12 ">
                 <div className="">
                   <h2 className="text-center mb-4">What Our Favorites Clients Say</h2>
                   <div id="testimonialCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -700,7 +722,7 @@ function Home() {
         </div>
       </div>
       {/* footer */}
-      <div div className="container-fluid " >
+      <div div className="container-fluid footer-color " >
         <div className="container">
           <div className="row text-center py-5">
             <div className="col-12">
@@ -710,8 +732,6 @@ function Home() {
           </div>
         </div>
       </div >
-      {/* This is for privacy policy  */}
-      <PrivacyPolicy  />
     </>
   )
 }

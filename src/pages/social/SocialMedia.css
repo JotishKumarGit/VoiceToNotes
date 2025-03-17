@@ -1,0 +1,91 @@
+.social-parent {
+    height: 100%;
+    width: 100%;
+}
+
+.social-parent-wrapper-left img {
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.social-parent-wrapper-right {
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.social-parent-wrapper-right h2 {
+    font-size: 34px;
+}
+
+.social-parent-wrapper-right p {
+
+    line-height: 30px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.social-parent-wrapper-right h6 {
+    text-align: center;
+}
+
+.social-parent-wrapper-right .social-btn {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.social-parent-wrapper-right .social-btn button {
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.social-parent-wrapper-right .social-btn button:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 771px) {
+    .social-parent-wrapper-right {
+        height: auto;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .social-parent-wrapper-right h2 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 534px) {
+    .social-parent-wrapper-right {
+        height: auto;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .social-parent-wrapper-right h2 {
+        font-size: 18px;
+    }
+
+    .social-parent-wrapper-right p {
+        text-align: center;
+        padding: 0px 0px;
+    }
+
+    .social-parent-wrapper-right h6 {
+        text-align: center;
+    }
+
+    .social-parent-wrapper-right .social-btn button {
+        padding: 3px 7px;
+        background-color: white;
+        color: black;
+    }
+
+
+}

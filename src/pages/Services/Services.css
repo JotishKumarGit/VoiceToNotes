@@ -25,3 +25,19 @@
     border: 2px solid #eee;
     border-radius: 20px;
 }
+
+@media (max-width: 990px) {
+    .service-p {
+        padding: 10px 60px;
+        line-height: 30px;
+        color: rgb(53, 81, 105);
+    }
+}
+
+@media (max-width: 545px) {
+    .service-p {
+        padding: 10px 10px;
+        line-height: 30px;
+        color: rgb(53, 81, 105);
+    }
+}
