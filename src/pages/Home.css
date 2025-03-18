@@ -413,7 +413,7 @@ body {
 
 .image-slider img {
     animation: colorChange 2s infinite alternate ease-in-out;
-    background-color: rgb(14, 159, 14);
+    background-color: white;
 }
 
 .image-slider {
@@ -437,12 +437,13 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: grey;
-    color: white;
+    background-color: rgb(191, 195, 235);
 }
 
 .image-wrapper img {
     margin: 0px 40px;
+    height: 50px;
+    background-color: white;
 }
 
 
@@ -799,9 +800,13 @@ body {
 }
 
 .box-2:hover {
-    background-color: azure;
+    background-color: rgb(191, 21, 154);
+    color: white;
 }
-
+.box-right p:hover{
+    background-color: rgb(191, 21, 154);
+    color: white;
+}
 .box-right h4 {
     font-size: 20px;
     font-weight: 500;
@@ -967,7 +972,6 @@ body {
 .check-price p {
     margin-top: 15px;
 }
-
 /* premium plan */
 .premium-plan {
     text-align: start;

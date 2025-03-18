@@ -4,7 +4,6 @@ import 'animate.css/animate.min.css';
 import blog1 from '/public/blog1.avif';
 import './Services.css';
 
-
 const Services = () => {
     return (
         <section className="container-fluid services py-5">
@@ -13,7 +12,7 @@ const Services = () => {
                 <p className="text-center mb-5 service-p" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. A quae placeat voluptatibus doloremque, dolorem ullam reiciendis enim numquam odit ratione inventore. Saepe dolore, reprehenderit reiciendis ab nesciunt adipisci cumque qui.</p>
                 <div className="row parent d-flex justify-context-center align-items ">
                     <div className="col-12 col-md-6 col-lg-4 col-sm-12  mb-4">
-                        <div style={{ borderRadius: '30px' }} className="card shadow-lg h-100 animate__animated animate__fadeInUp">
+                        <div style={{ borderRadius: '30px' }} className="card shadow-lg h-100 animate__animated animate__fadeInUp box">
                             <div className="card-body text-center ">
                                 <img style={{ height: "100px", width: "100px", borderRadius: '100%' }} className='py-3' src={blog1} alt="" />
                                 <h5 className="card-title">Service One</h5>
@@ -25,7 +24,7 @@ const Services = () => {
                         </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4 col-sm-12  mb-4">
-                        <div style={{ borderRadius: '30px' }} className="card shadow-lg h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div style={{ borderRadius: '30px' }} className="card shadow-lg h-100 animate__animated animate__fadeInUp animate__delay-1s box">
                             <div className="card-body text-center ">
                                 <img style={{ height: "100px", width: "100px", borderRadius: '100%' }} className='py-3' src={blog1} alt="" />
                                 <h5 className="card-title">Service Two</h5>
@@ -37,7 +36,7 @@ const Services = () => {
                         </div>
                     </div>
                     <div className="col-12 col-md-6 col-lg-4 col-sm-12  mb-4" >
-                        <div style={{ borderRadius: '30px' }} className="card shadow-lg h-100  animate__animated animate__fadeInUp animate__delay-2s">
+                        <div style={{ borderRadius: '30px' }} className="card shadow-lg h-100  animate__animated animate__fadeInUp animate__delay-2s box">
                             <div className="card-body text-center ">
                                 <img style={{ height: "100px", width: "100px", borderRadius: '100%' }} className='py-3' src={blog1} alt="" />
                                 <h5 className="card-title">Service Three</h5>

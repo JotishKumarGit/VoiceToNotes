@@ -13,6 +13,7 @@ import Section from './pages/About';
 import TryIt from './components/TryIt';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Contact from './pages/Contact';
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/tryit' element={<TryIt />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/contact' element={<Contact />} />
+
       </Routes>
       <Footer />
     </BrowserRouter >

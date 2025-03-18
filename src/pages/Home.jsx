@@ -9,7 +9,8 @@ import voice from '/public/voice.png';
 import mac from '/public/mac-2.gif';
 // import voice from '/public/voice.png';
 import delImg from '/public/delImg.png';
-import medium from '/public/medium.png';
+// import medium from '/public/medium-2.png';
+import medium from '/public/medium-bg.png';
 import ih from '/public/ih.svg';
 import foundr from '/public/foundr.svg';
 import scoopit from '/public/scoopit.svg';
@@ -38,7 +39,8 @@ import Animated_gift from '/public/anima-gift.gif';
 import top_mac from '/public/top-mac.gif';
 import anima_3 from '/public/anama-3.gif';
 import ScrollModal from '../components/modal/ScrollModal';
-
+import CardSlider from '../components/cardSlider/CardSlider';
+import ImageSlider from '../components/cardSlider/ImageSlider';
 
 
 function Home() {
@@ -62,14 +64,13 @@ function Home() {
   // For dynamic content from typewriter
   const dynamicText = "Never Take Notes Again,";
   const aboutText = "This is about";
-  const demo = "Interactive demo";
+  const demo = "Interactive Demo";
   const aboutUs = "About Us";
   const naverTakeNote = "Naver take not manually";
   const plan = "Chose Your Plan";
 
-
   // This is for image slider
-  const images = [medium, ih, foundr, scoopit, medium, ih, foundr, scoopit];
+  const images = [medium, ih, foundr, scoopit, ih, foundr, scoopit];
   // THis is for card slider data
   const cardSlider = [
     { id: 1, title: "Mountain View", image: "/public/star.jpg", paragraph: "This is a paragraph" },
@@ -225,7 +226,7 @@ function Home() {
                   <div className="col-12 col-md-12 col-lg-4 col-sm-12">
                     <div className="right-section shadow-lg d-flex flex-column align-items-center text-center p-4">
                       {/* <h3>Interactive demo</h3> */}
-                      <h3 style={{ color: "blue" }} className='text-demo' > <AnimatedText text="Interactive demo" /></h3>
+                      <h3 style={{ color: "blue" }} className='text-demo'> <AnimatedText text="Interactive Demo" /></h3>
                       <div className='line-s' style={{
                         backgroundColor: bgColor, transition: "background-color 0.5s ease"
                       }}>
@@ -275,13 +276,8 @@ function Home() {
       {/* This is for about sections */}
       {/* <About /> */}
       {/* image slider */}
-      <div className=" container-fluid slider-container overflow-hidden  py-5 image-wrapper" >
-        <div className="image-slider">
-          {images.map((img, index) => (
-            <img key={index} src={img} alt="" style={{ backgroundColor: 'green' }} className=" h-16 mx-5 animated-image" />
-          ))}
-        </div>
-      </div>
+      {/* image slider */}
+      <ImageSlider />
       {/* This is for video */}
       <Video />
       {/* This is section */}
@@ -291,51 +287,53 @@ function Home() {
           <div className="container">
             <div className="row section-wrapper-parent">
               <div className="text-center py-4">
-                <h2><Typewriter text={naverTakeNote} /> <span style={{ color: "red" }}>manually</span></h2>
-                <p style={{ color: "light" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos fugit quod suscipit odio libero dicta eos! Non, quasi. Eos, minus culpa voluptates delectus praesentium laudantium eaque? Provident qui nostrum modi.</p>
+                <div className='py-4'>
+                  <AnimatedText text={naverTakeNote} />
+                </div>
+                <p style={{ color: "light" }}>Social media development enhances digital presence through innovative features and seamless user experiences. It involves coding, UI/UX design, and integration of trends to boost engagement. A well-developed platform drives interaction, growth, and brand visibility.</p>
               </div>
               <div className="col-12">
                 <div className="row pb-5">
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
-                    <div className="box-1">
-                      <img src={mail} alt="" />
-                      <h3>Meetings</h3>
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
+                    <div className="box-1 text-start">
+                      <img style={{ height: "100px", width: "200px" }} src={mail} alt="" />
+                      <h3>Sales Teams</h3>
+                      <p>Sales teams drive revenue by identifying leads, building relationships, and closing deals. They use strategic communication, data insights, and negotiation skills to achieve targets. A strong sales team enhances customer satisfaction and business growth.</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
-                      <h3>Meetings</h3>
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
+                      <h3>Marketing Teams</h3>
+                      <p>Marketing teams create and execute strategies to attract, engage, and retain customers. They use market research, branding, and digital campaigns to drive awareness and demand. A strong marketing team fuels business growth and brand loyalty.</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
-                      <h3>Meetings</h3>
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
+                      <h3>Business</h3>
+                      <p>Business involves creating, managing, and scaling operations to generate value and profit. It requires strategic planning, innovation, and strong customer relationships. Success in business depends on adaptability, market understanding, and effective execution.</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
-                      <h3>Meetings</h3>
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
+                      <h3>Recruiting Teams</h3>
+                      <p>Recruiting teams attract, assess, and hire top talent to drive business success. They leverage sourcing strategies, interviews, and employer branding to build strong teams. A great recruiting team ensures the right fit for both the company and candidates.</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="not found" />
-                      <h3>Meetings</h3>
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
+                      <h3>Media</h3>
+                      <p>Media encompasses the creation, distribution, and consumption of information across various platforms. It plays a vital role in shaping opinions, entertainment, and brand visibility. Effective media strategies drive engagement, awareness, and influence. </p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12 zoom-out">
                     <div className="box-1">
                       <img src={mail} alt="" />
-                      <h3>Meetings</h3>
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident facere modi ad iste nostrum, harum delectus perferendis doloribus. </p>
+                      <h3>Education</h3>
+                      <p>Education empowers individuals with knowledge, skills, and critical thinking for personal and professional growth. It fosters innovation, problem-solving, and lifelong learning. A strong education system drives societal progress and economic development.</p>
                     </div>
                   </div>
                 </div>
@@ -362,8 +360,8 @@ function Home() {
                 <div className="row">
                   <div className="col-12 col-md-6 col-lg-4 col-sm-12">
                     <div className="box-2">
-                      <div className="bob-left">
-                        <img src={voice} alt="" />
+                      <div className="box-left">
+                        <img className='mx-2' style={{ backgroundColor: "black", borderRadius: "100px" }} src={voice} alt="" />
                       </div>
                       <div className="box-right">
                         <h4>Record Write, Upload a File </h4>
@@ -372,7 +370,7 @@ function Home() {
                     </div>
                     <div className="box-2">
                       <div className="bob-left">
-                        <img src={voice} alt="" />
+                        <img className='mx-2' style={{ backgroundColor: "black", borderRadius: "100px" }} src={voice} alt="" />
                       </div>
                       <div className="box-right">
                         <h4>Record Write, Upload a File </h4>
@@ -381,25 +379,25 @@ function Home() {
                     </div>
                     <div className="box-2">
                       <div className="bob-left">
-                        <img src={voice} alt="" />
+                        <img className='mx-2' style={{ backgroundColor: "black", borderRadius: "100px" }} src={voice} alt="" />
                       </div>
                       <div className="box-right">
                         <h4>Record Write, Upload a File </h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                       </div>
                     </div>
-                    <div className="box-center">
+                    <div className="box-2">
                       <div className="bob-left">
-                        <img src={voice} alt="" />
+                        <img className='mx-2' style={{ backgroundColor: "black", borderRadius: "100px" }} src={voice} alt="" />
                       </div>
                       <div className="box-right">
-                        <h4>Chat with your noto</h4>
-                        <p>Ask questions and with your voice</p>
+                        <h4>Record Write, Upload a File </h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
                       </div>
                     </div>
                     <div className="box-2">
                       <div className="bob-left">
-                        <img src={voice} alt="" />
+                        <img className='mx-2' style={{ backgroundColor: "black", borderRadius: "100px" }} src={voice} alt="" />
                       </div>
                       <div className="box-right">
                         <h4>Record Write, Upload a File </h4>
@@ -423,7 +421,7 @@ function Home() {
         <div className="container">
           <div className="row text-center py-5">
             <div className="col-12 ">
-              <h2 className='py-3'>Sumrise Various Types of Content</h2>
+              <h2 className='py-3'><AnimatedText text="Sumrise Various Types of Content" /></h2>
               <p>Speak Notes helps you create Speak Notes helps you create </p>
               <div className="sumrise-wrapper py-5 me-4">
                 <div className="sub-wrapper">
@@ -584,45 +582,8 @@ function Home() {
       <Services />
       {/* End services sections  */}
 
-      {/* testimonials */}
-      <div className="container-fluid py-5 testimonials">
-        <div className="row">
-          <div className="col-12">
-            <div className="row py-5">
-              <div className="col-12 ">
-                <div className="">
-                  <h2 className="text-center mb-4">What Our Favorites Clients Say</h2>
-                  <div id="testimonialCarousel" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                      {testimonials.map((testimonial, index) => (
-                        <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                          <div className="d-flex flex-column align-items-center text-center">
-                            <img
-                              src={testimonial.image}
-                              alt={testimonial.name}
-                              className="rounded-circle mb-3"
-                              width="100"
-                            />
-                            <h5 className='py-3'>{testimonial.name}</h5>
-                            <p className="text-muted pt-3">{testimonial.designation}</p>
-                            <p className="pt-4 w-100 px-1 text-wrap mx-auto">{testimonial.review}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                      <span className="carousel-control-prev-icon"></span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                      <span className="carousel-control-next-icon"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* testimonials  card slider */}
+      <CardSlider />
       {/* FAQ Questions */}
       <div className="container-fluid">
         <div className="container">
@@ -688,40 +649,7 @@ function Home() {
           </Slider>
         </div >
       </div>
-      {/* CardSlider */}
-      <div className="container-fluid py-5">
-        <div className="container">
-          <div className="content-client">
-            <h2 className='text-center'>What Our Favorites Clients Say</h2>
-            <p className='text-center py-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam sed id modi aperiam pariatur cupiditate itaque soluta fugit quo officiis sapiente, veritatis iure deserunt autem blanditiis consequuntur distinctio vel quod?</p>
-          </div>
-        </div>
-        <div className="w-full max-w-4xl mx-auto p-5">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={20}
-            freeMode={true}
-            autoplay={{
-              delay: 0, // No waiting
-              disableOnInteraction: false,
-            }}
-            speed={2000} // Fast transition
-            loop={true}
-            modules={[Autoplay, FreeMode]}
-          >
-            {cardSlider.map((card) => (
-              <SwiperSlide key={card.id}>
-                <div className="w-60 h-72 bg-white shadow-lg rounded-xl overflow-hidden m-5 card-slide">
-                  <img src={card.image} alt={card.title} className="rounded-circle mb-3 w-100" style={{ alignItems: 'center', justifyContent: 'center' }} />
-                  <div className="p-3 text-center text-lg font-semibold">{card.title}</div>
-                  <p className="text-center">{card.paragraph}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-      {/* footer */}
+      {/* After footer */}
       <div div className="container-fluid footer-color " >
         <div className="container">
           <div className="row text-center py-5">

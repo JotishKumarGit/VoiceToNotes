@@ -1,0 +1,9 @@
+.contact-us p {
+    padding: 20px 150px;
+}
+
+@media(max-width: 999px) {
+    .contact-us p {
+        padding: 20px   50px;
+    }
+}

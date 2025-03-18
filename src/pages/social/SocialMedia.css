@@ -49,6 +49,18 @@
     color: white;
 }
 
+@media (max-width: 1200px) {
+    .social-parent-wrapper-right {
+        height: auto;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .social-parent-wrapper-right h2 {
+        font-size: 27px;
+    }
+}
+
 @media (max-width: 771px) {
     .social-parent-wrapper-right {
         height: auto;

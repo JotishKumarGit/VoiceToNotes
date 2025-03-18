@@ -37,6 +37,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/">FAQ</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/contact">Contact Us</Link>
+                        </li>
                         {/* <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" to="/solution" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Solution

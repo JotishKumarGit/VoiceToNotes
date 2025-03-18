@@ -7,6 +7,7 @@ import blog1 from '/public/blog1.avif';
 import man_2 from '/public/man-img-2.gif';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../components/Animations/Varient';
+import laptop from '/public/laptop-animated-new.gif';
 
 
 function SocialMedia() {
@@ -25,7 +26,7 @@ function SocialMedia() {
                             <motion.div variants={fadeIn("up", 0.3)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} className="row parent py-5 text-center justify-content-center" >
                                 <div className="col-12 col-md-12 col-lg-6 col-sm-12">
                                     <div className="social-parent-wrapper-left pb-4">
-                                        <img style={{}} src={laptop_gif} alt="" />
+                                        <img src={laptop} alt="" style={{ height: "auto" }} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-md-12 col-lg-6 col-sm-12 ">
@@ -49,12 +50,8 @@ function SocialMedia() {
             <div className="container-fluid ">
                 <div className="container ">
                     <div className="row parent py-5 text-center justify-content-center">
-                        {/* <div className="social-content">
-                            <h2>  <AnimatedText text="Social Media Content" /></h2>
-                            <p className='py-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque incidunt eligendi sunt, voluptates dolor ipsum! Dolore earum doloribus odit inventore alias autem hic, est aspernatur, nemo eos sit esse dolores?</p>
-                        </div> */}
                         <div className="col-12">
-                            <div className="row text-start social-parent py-5">
+                            <motion.div variants={fadeIn("up", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} iv className="row text-start social-parent py-5">
                                 <div className="col-12 col-md-12 col-lg-6 col-sm-12 pb-4">
                                     <div className=" social-parent-wrapper-right shadow-lg py-4 px-5" >
                                         <h2 className='text-center'>This is for social context</h2>
@@ -69,7 +66,7 @@ function SocialMedia() {
                                 <div className="col-12 col-md-12 col-lg-6 col-sm-12 social-parent-wrapper-left">
                                     <img className='' style={{}} src={man_img} alt="" />
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -78,15 +75,11 @@ function SocialMedia() {
             <div className="container-fluid ">
                 <div className="container ">
                     <div className="row parent py-5  text-center justify-content-center">
-                        {/* <div className="social-content">
-                            <h2>  <AnimatedText text="Social Media Content" /></h2>
-                            <p className='py-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque incidunt eligendi sunt, voluptates dolor ipsum! Dolore earum doloribus odit inventore alias autem hic, est aspernatur, nemo eos sit esse dolores?</p>
-                        </div> */}
                         <div className="col-12">
-                            <div className="row social-parent text-start align-items-center justify-content-center py-5">
+                            <motion.div variants={fadeIn("up", 0.2)} initial="hidden" whileInView={"show"} viewport={{ once: false, amount: 0.7 }} iv className="row social-parent text-start align-items-center justify-content-center py-5">
                                 <div className="col-12 col-md-12 col-lg-6 col-sm-12 ">
                                     <div className="social-parent-wrapper-left  pb-4">
-                                        <img className='' style={{}} src={man_2} alt="" />
+                                        <img className='' style={{ height: "auto" }} src={man_2} alt="" />
                                     </div>
                                 </div>
                                 <div className="col-12 col-md-12 col-lg-6 col-sm-12 ">
@@ -101,7 +94,7 @@ function SocialMedia() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
